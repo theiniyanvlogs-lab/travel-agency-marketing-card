@@ -11,26 +11,20 @@ background:#f5f7fb;
 color:#333;
 line-height:1.6;
 }
+
 /* HERO SECTION */
 
 .hero{
-background:#ffffff;
+background:#fff;
 padding:0;
-text-align:center;
 overflow:hidden;
 }
-
-/* FULL BANNER - NO CROPPING */
 
 .cover-banner{
 width:100%;
 height:auto;
 display:block;
-border-radius:0;
 }
-
-/* HIDE EXTRA LOGO
-   (banner already contains logo) */
 
 .logo{
 display:none;
@@ -38,6 +32,7 @@ display:none;
 
 .hero-content{
 padding:40px 20px;
+text-align:center;
 background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
 color:#fff;
 }
@@ -49,8 +44,8 @@ margin-bottom:10px;
 
 .hero h2{
 font-size:1.4rem;
-font-weight:500;
 margin-bottom:15px;
+font-weight:500;
 }
 
 .hero p{
@@ -71,7 +66,7 @@ gap:12px;
 .action-buttons a{
 background:#fff;
 color:#111;
-padding:12px 20px;
+padding:12px 22px;
 border-radius:30px;
 text-decoration:none;
 font-weight:600;
@@ -82,16 +77,16 @@ transition:.3s;
 transform:translateY(-3px);
 }
 
-/* SECTIONS */
+/* GENERAL SECTION */
 
 section{
-padding:60px 8%;
+padding:70px 8%;
 }
 
 section h2{
 text-align:center;
-margin-bottom:30px;
 font-size:2rem;
+margin-bottom:35px;
 color:#111827;
 }
 
@@ -99,20 +94,31 @@ color:#111827;
 max-width:900px;
 margin:auto;
 text-align:center;
+font-size:18px;
 }
 
 /* SERVICES */
 
-#services,
+#services-section h2,
+#pricing-section h2{
+text-align:center;
+margin-bottom:35px;
+}
+
+#services{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+}
+
 #pricing{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
 }
 
 .service-card{
-background:rgba(255,255,255,.8);
-backdrop-filter:blur(10px);
+background:#fff;
 padding:25px;
 border-radius:18px;
 box-shadow:0 8px 20px rgba(0,0,0,.08);
@@ -122,6 +128,15 @@ text-align:center;
 
 .service-card:hover{
 transform:translateY(-8px);
+}
+
+.service-card h3{
+margin-bottom:12px;
+font-size:1.4rem;
+}
+
+.service-card p{
+font-size:1rem;
 }
 
 /* GALLERY */
@@ -135,7 +150,7 @@ gap:20px;
 .gallery img{
 width:100%;
 border-radius:15px;
-box-shadow:0 5px 15px rgba(0,0,0,.1);
+box-shadow:0 5px 15px rgba(0,0,0,.12);
 transition:.3s;
 cursor:pointer;
 }
@@ -144,11 +159,11 @@ cursor:pointer;
 transform:scale(1.03);
 }
 
-/* VIDEOS */
+/* VIDEO */
 
 .video-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:20px;
 }
 
@@ -158,7 +173,7 @@ border-radius:15px;
 box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
 
-/* LIST */
+/* WHY CHOOSE */
 
 ul{
 max-width:700px;
@@ -167,6 +182,7 @@ margin:auto;
 
 ul li{
 margin-bottom:12px;
+font-size:18px;
 }
 
 /* FORM */
@@ -187,9 +203,14 @@ border-radius:12px;
 font-size:16px;
 }
 
+textarea{
+min-height:120px;
+resize:vertical;
+}
+
 button{
 background:#2563eb;
-color:white;
+color:#fff;
 padding:14px;
 border:none;
 border-radius:12px;
@@ -206,6 +227,11 @@ opacity:.9;
 
 #contact{
 text-align:center;
+}
+
+#contact p{
+margin-bottom:10px;
+font-size:18px;
 }
 
 /* WHATSAPP FLOAT */
@@ -226,7 +252,8 @@ font-size:32px;
 text-decoration:none;
 z-index:999;
 box-shadow:0 4px 15px rgba(0,0,0,.3);
-animation:floatWhatsapp 3s ease-in-out infinite,
+animation:
+floatWhatsapp 3s ease-in-out infinite,
 pulseWhatsapp 2s infinite;
 }
 
@@ -273,17 +300,24 @@ opacity:0;
 }
 }
 
+/* TABLET */
+
+@media(max-width:992px){
+
+#services,
+#pricing{
+grid-template-columns:repeat(2,1fr);
+}
+
+}
+
 /* MOBILE */
 
 @media(max-width:768px){
 
 .cover-banner{
-max-height:260px;
-}
-
-.logo{
-width:100px;
-height:100px;
+width:100%;
+height:auto;
 }
 
 .hero h1{
@@ -295,7 +329,7 @@ font-size:1.1rem;
 }
 
 section h2{
-font-size:1.6rem;
+font-size:1.7rem;
 }
 
 .action-buttons{
@@ -306,6 +340,11 @@ align-items:center;
 .action-buttons a{
 width:250px;
 text-align:center;
+}
+
+#services,
+#pricing{
+grid-template-columns:1fr;
 }
 
 }
