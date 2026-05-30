@@ -11,7 +11,6 @@ background:#f5f7fb;
 color:#333;
 line-height:1.6;
 }
-
 /* HERO SECTION */
 
 .hero{
@@ -21,29 +20,26 @@ text-align:center;
 overflow:hidden;
 }
 
+/* FULL BANNER - NO CROPPING */
+
 .cover-banner{
 width:100%;
-max-height:500px;
-object-fit:cover;
+height:auto;
 display:block;
+border-radius:0;
+}
+
+/* HIDE EXTRA LOGO
+   (banner already contains logo) */
+
+.logo{
+display:none;
 }
 
 .hero-content{
 padding:40px 20px;
 background:linear-gradient(135deg,#0f172a,#1e3a8a,#2563eb);
 color:#fff;
-}
-
-.logo{
-width:140px;
-height:140px;
-object-fit:contain;
-display:block;
-margin:0 auto 20px;
-border-radius:50%;
-background:#fff;
-padding:8px;
-box-shadow:0 10px 25px rgba(0,0,0,0.15);
 }
 
 .hero h1{
